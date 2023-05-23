@@ -58,9 +58,11 @@ public class RentalStore {
         if (this.availableItems.contains(item) && this.customers.contains(customer)) {
             item.rentItem(customer);
         }
+        this.availableItems.remove(item);
     }
 
     public void returnItem(Rental rental) {
-        rental.getItem().returnItem(rental.getCustomer());
+        rental.getItem().returnItem(rental);
+        this.availableItems.add(rental.getItem());
     }
 }

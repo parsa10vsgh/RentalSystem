@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Item {
+public abstract class Item {
     private final String title;
     private final  String genre;
     private final Date release;
@@ -40,7 +40,7 @@ public class Item {
         this.available = available;
     }
 
-    public void rentItem(Customer customer) {}
-    public void returnItem(Customer customer) {}
+    public  abstract void rentItem(Customer customer);
+    public abstract void returnItem(Rental rental);
 }
 

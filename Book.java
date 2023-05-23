@@ -26,8 +26,9 @@ public class Book extends Item {
         System.out.println("Book Rented");
     }
 
-    public void returnItem(Customer customer) {
+    public void returnItem(Rental rental) {
         this.setAvailable(false);
+        rental.getCustomer().getRental().remove(rental);
 
 
     }
